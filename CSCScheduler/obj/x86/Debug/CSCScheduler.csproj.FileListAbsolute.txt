@@ -1,0 +1,11 @@
+C:\研修\Projects\CSCScheduler\CSCScheduler\bin\Debug\CSCScheduler.exe
+C:\研修\Projects\CSCScheduler\CSCScheduler\bin\Debug\CSCScheduler.pdb
+C:\研修\Projects\CSCScheduler\CSCScheduler\obj\x86\Debug\CSCScheduler.csprojResolveAssemblyReference.cache
+C:\研修\Projects\CSCScheduler\CSCScheduler\obj\x86\Debug\CSCScheduler.Form1.resources
+C:\研修\Projects\CSCScheduler\CSCScheduler\obj\x86\Debug\CSCScheduler.Properties.Resources.resources
+C:\研修\Projects\CSCScheduler\CSCScheduler\obj\x86\Debug\CSCScheduler.csproj.GenerateResource.Cache
+C:\研修\Projects\CSCScheduler\CSCScheduler\obj\x86\Debug\CSCScheduler.exe
+C:\研修\Projects\CSCScheduler\CSCScheduler\obj\x86\Debug\CSCScheduler.pdb
+C:\研修\Projects\CSCScheduler\CSCScheduler\bin\Debug\CSCScheduler.exe.config
+C:\研修\Projects\CSCScheduler\CSCScheduler\bin\Debug\CSCScheduler.mdf
+C:\研修\Projects\CSCScheduler\CSCScheduler\bin\Debug\CSCScheduler_log.ldf

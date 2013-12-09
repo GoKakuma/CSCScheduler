@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CSCScheduler" Class="CSCScheduleDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\CSCScheduler.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True" SettingsObjectName="CSCScheduler.Properties.Settings" SettingsPropertyName="CSCSchedulerConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CSCSchedule" Member="CSCSchedule">
+    <Type Name="CSCSchedule">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="Contents" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="Limit" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="IsFinished" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

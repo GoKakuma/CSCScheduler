@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="CSCScheduleDataClasses">
+  <DataContextMoniker Name="/CSCScheduleDataClassesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="db3359b7-bd1a-4f1e-baef-47b006370d72" absoluteBounds="5.5, 2, 2, 1.7220992024739581">
+      <DataClassMoniker Name="/CSCScheduleDataClassesDataContext/CSCSchedule" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4bf74f68-3332-4c05-a0a8-9bc1dd369cc6" absoluteBounds="5.515, 2.46, 1.9700000000000002, 1.1620992024739583" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
