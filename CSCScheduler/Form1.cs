@@ -9,6 +9,9 @@ using System.Windows.Forms;
 
 namespace CSCScheduler
 {
+    /// <summary>
+    /// メインウィンドウのクラス
+    /// </summary>
     public partial class Form1 : Form
     {
         #region フィールド変数

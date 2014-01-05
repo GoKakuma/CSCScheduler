@@ -7,9 +7,17 @@ using Microsoft.VisualBasic.FileIO;
 
 namespace CSCScheduler
 {
+    /// <summary>
+    /// インポートやエクスポートのコマンドが実行されたときに使用するクラス
+    /// DBに格納されているデータをCSVに出力したり、CSVファイルのデータをDBに挿入する機能を実装
+    /// </summary>
     static public class CsvFile
     {
         #region メソッド
+        /// <summary>
+        /// 引数として受け取ったファイルのデータを、アプリケーションのデータとして追加登録する
+        /// </summary>
+        /// <param name="filename">ファイル名</param>
         static public void Import(string filename)
         {
             IEnumerable<CSCSchedule> schedules = GetImportCSCSchedules(filename);
@@ -70,7 +78,10 @@ namespace CSCScheduler
             return schedule;
         }
 
-
+        /// <summary>
+        /// 引数として受け取ったファイルに対して、アプリケーションのデータを出力する
+        /// </summary>
+        /// <param name="filename"></param>
         static public void Export(string filename)
         {
             Encoding encode = Encoding.GetEncoding("Shift_Jis");

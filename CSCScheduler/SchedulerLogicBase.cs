@@ -7,6 +7,10 @@ using System.Text;
 
 namespace CSCScheduler
 {
+    /// <summary>
+    /// アプリケーションの機能を提供するためのクラスに継承されるための抽象クラス
+    /// データ項目の値が変更されたときの検証や値が変化した際の通知、エラーインフォメーションの管理などの共通機能を実装するクラス
+    /// </summary>
     abstract public class SchedulerLogicBase : INotifyPropertyChanged, IDataErrorInfo
     {
         public event PropertyChangedEventHandler PropertyChanged;

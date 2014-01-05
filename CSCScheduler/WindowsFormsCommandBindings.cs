@@ -5,6 +5,9 @@ using System.Text;
 
 namespace CSCScheduler
 {
+    /// <summary>
+    /// コマンドトリガーの役割を果たすコントロールに関する機能を実装するクラス
+    /// </summary>
     public class WindowsFormsCommandBindings
     {
         private List<Action> _resetEnabledActions;

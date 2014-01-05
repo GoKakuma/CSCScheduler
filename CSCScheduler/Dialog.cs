@@ -8,8 +8,15 @@ using System.IO;
 
 namespace CSCScheduler
 {
+    /// <summary>
+    /// 確認メッセージなどのダイアログボックスを表示するためのクラス
+    /// </summary>
     static public class Dialog
     {
+        /// <summary>
+        /// インフォメーションメッセージを表示するためのメッセージボックスを開く
+        /// </summary>
+        /// <param name="message">メッセージ</param>
         static public void ShowInfoMessage(string message)
         {
             MessageBox.Show(
@@ -31,6 +38,10 @@ namespace CSCScheduler
                         MessageBoxDefaultButton.Button2);
         }
 
+        /// <summary>
+        /// エラーメッセージ専用のメッセージボックスを開く
+        /// </summary>
+        /// <param name="message">エラーメッセージ</param>
         static public void ShowErrorMessageBox(string message)
         {
             MessageBox.Show(
@@ -40,6 +51,12 @@ namespace CSCScheduler
                 MessageBoxIcon.Error);
         }
 
+        /// <summary>
+        /// 開きたいファイル名を返す
+        /// </summary>
+        /// <param name="title">ダイアログタイトル</param>
+        /// <param name="filler">拡張子フィルタ</param>
+        /// <returns>ファイル名</returns>
         static public string GetOpenFilename(string title, string filler)
         {
             using (OpenFileDialog x = new OpenFileDialog())
@@ -52,6 +69,12 @@ namespace CSCScheduler
             }
         }
 
+        /// <summary>
+        /// 保存したいファイル名を返す
+        /// </summary>
+        /// <param name="title">ダイアログタイトル</param>
+        /// <param name="filter">拡張子フィルタ</param>
+        /// <returns>ファイル名</returns>
         static public string GetSaveFilename(string title, string filter)
         {
             using (SaveFileDialog x = new SaveFileDialog())
@@ -76,6 +99,10 @@ namespace CSCScheduler
             }
         }
 
+        /// <summary>
+        /// 実行中のアプリケーションタイトルを取得する
+        /// </summary>
+        /// <returns>タイトル名</returns>
         static private string GetTitle()
         {
             Assembly assembly = Assembly.GetExecutingAssembly();

@@ -5,6 +5,9 @@ using System.Text;
 
 namespace CSCScheduler
 {
+    /// <summary>
+    /// 各コマンドのロジックと、各コマンドが実行できるかどうかを判定するロジックを実装するクラス
+    /// </summary>
     public class Command
     {
         private readonly Action<object> _execute;

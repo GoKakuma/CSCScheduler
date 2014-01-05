@@ -7,6 +7,10 @@ using System.Text;
 
 namespace CSCScheduler
 {
+    /// <summary>
+    /// スケジュール管理アプリケーションのデータの保持や検証、コマンドを処理するためのロジックを実装するクラス
+    /// スケジュール管理アプリケーションの本体
+    /// </summary>
     sealed public class CSCSchedulerLogic : SchedulerLogicBase, IDisposable
     {
         #region フィールドメンバー
