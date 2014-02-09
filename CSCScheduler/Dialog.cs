@@ -9,7 +9,7 @@ using System.IO;
 namespace CSCScheduler
 {
     /// <summary>
-    /// 確認メッセージなどのダイアログボックスを表示するためのクラス
+    /// 確認メッセージなどのダイアログボックスを表示するための静的クラス
     /// </summary>
     static public class Dialog
     {
@@ -26,6 +26,11 @@ namespace CSCScheduler
                 MessageBoxIcon.Information);
         }
 
+        /// <summary>
+        /// 実行確認を表示するメッセージボックスを開く
+        /// </summary>
+        /// <param name="message">メッセージ</param>
+        /// <returns>メッセージボックスのボタンの戻り値</returns>
         static public bool IsExecuteMessageBox(string message)
         {
             return
@@ -86,7 +91,13 @@ namespace CSCScheduler
             }
         }
 
+        /// <summary>
+        /// メッセージボックスのタイトル文字列
+        /// </summary>
         static private string _title;
+        /// <summary>
+        /// メッセージボックスのタイトル文字列を取得
+        /// </summary>
         static private string Title
         {
             get

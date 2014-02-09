@@ -30,6 +30,11 @@ namespace CSCScheduler
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filename"></param>
+        /// <returns></returns>
         static private IEnumerable<CSCSchedule> GetImportCSCSchedules(string filename)
         {
             List<CSCSchedule> list = new List<CSCSchedule>();
@@ -50,6 +55,11 @@ namespace CSCScheduler
             return list;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="fields"></param>
+        /// <returns></returns>
         static private CSCSchedule CreateCSCSchedule(string[] fields)
         {
             if (fields.Length != 4) throw new ImportDataException();

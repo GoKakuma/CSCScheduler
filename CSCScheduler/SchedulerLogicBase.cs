@@ -15,6 +15,7 @@ namespace CSCScheduler
     {
         /// <summary>
         ///INotifyPropertyChangedの実装
+        ///プロパティ値が変更されたときに発生
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -30,6 +31,7 @@ namespace CSCScheduler
 
         /// <summary>
         /// IDataErrorInfoの実装
+        /// オブジェクトに関する間違いを示すエラーメッセージを取得
         /// </summary>
         abstract public string Error { get; }
 
@@ -41,7 +43,7 @@ namespace CSCScheduler
 
         /// <summary>
         /// IDataErrorInfoの実装
-        /// インデックスを受け取って対応する値を返す
+        /// 指定した名前のプロパティに関するエラーメッセージを取得
         /// </summary>
         /// <param name="propertyName">キー</param>
         /// <returns>対応する値もしくはnull</returns>

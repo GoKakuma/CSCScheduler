@@ -10,3 +10,16 @@ C:\研修\Projects\CSCScheduler\CSCScheduler\obj\x86\Release\CSCScheduler.exe
 C:\研修\Projects\CSCScheduler\CSCScheduler\obj\x86\Release\CSCScheduler.pdb
 C:\研修\Projects\CSCScheduler\CSCScheduler\obj\x86\Release\CSCScheduler.csprojResolveAssemblyReference.cache
 C:\研修\Projects\CSCScheduler\CSCScheduler\bin\Release\CSCScheduler.xml
+C:\Documents and Settings\cC11381.MAIN\デスクトップ\CSCScheduler-master\CSCScheduler\bin\Release\CSCScheduler.exe.config
+C:\Documents and Settings\cC11381.MAIN\デスクトップ\CSCScheduler-master\CSCScheduler\obj\x86\Release\CSCScheduler.exe
+C:\Documents and Settings\cC11381.MAIN\デスクトップ\CSCScheduler-master\CSCScheduler\obj\x86\Release\CSCScheduler.pdb
+C:\Documents and Settings\cC11381.MAIN\デスクトップ\CSCScheduler-master\CSCScheduler\bin\Release\CSCScheduler.mdf
+C:\Documents and Settings\cC11381.MAIN\デスクトップ\CSCScheduler-master\CSCScheduler\bin\Release\CSCScheduler_log.ldf
+C:\Documents and Settings\cC11381.MAIN\デスクトップ\CSCScheduler-master\CSCScheduler\bin\Release\CSCScheduler.exe
+C:\Documents and Settings\cC11381.MAIN\デスクトップ\CSCScheduler-master\CSCScheduler\bin\Release\CSCScheduler.pdb
+C:\Documents and Settings\cC11381.MAIN\デスクトップ\CSCScheduler-master\CSCScheduler\bin\Release\CSCScheduler.xml
+C:\Documents and Settings\cC11381.MAIN\デスクトップ\CSCScheduler-master\CSCScheduler\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Documents and Settings\cC11381.MAIN\デスクトップ\CSCScheduler-master\CSCScheduler\obj\x86\Release\CSCScheduler.Form1.resources
+C:\Documents and Settings\cC11381.MAIN\デスクトップ\CSCScheduler-master\CSCScheduler\obj\x86\Release\CSCScheduler.Properties.Resources.resources
+C:\Documents and Settings\cC11381.MAIN\デスクトップ\CSCScheduler-master\CSCScheduler\obj\x86\Release\GenerateResource.read.1.tlog
+C:\Documents and Settings\cC11381.MAIN\デスクトップ\CSCScheduler-master\CSCScheduler\obj\x86\Release\GenerateResource.write.1.tlog
