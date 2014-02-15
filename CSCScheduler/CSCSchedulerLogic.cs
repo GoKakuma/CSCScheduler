@@ -14,11 +14,21 @@ namespace CSCScheduler
     sealed public class CSCSchedulerLogic : SchedulerLogicBase, IDisposable
     {
         #region フィールドメンバー
+        /// <summary>
+        /// Filterプロパティに格納するための定数
+        /// </summary>
         private const string CSV_FILTER = "CSV ファイル(*.csv)|*.csv|" + "テキスト ファイル(*.txt)|*.txt|すべてのファイル(*.*)|*.*";
+
+        /// <summary>
+        /// 
+        /// </summary>
         private readonly CSCScheduleDataClassesDataContext _dataContext;
         #endregion
 
         #region コンストラクタ
+        /// <summary>
+        /// 
+        /// </summary>
         public CSCSchedulerLogic()
         {
             _dataContext = new CSCScheduleDataClassesDataContext(); 
@@ -27,6 +37,9 @@ namespace CSCScheduler
         #endregion
 
         #region Dispose メソッド
+        /// <summary>
+        /// 
+        /// </summary>
         public void Dispose()
         {
             _dataContext.Dispose(); // _dataContextオブジェクトの解放
@@ -34,6 +47,9 @@ namespace CSCScheduler
         #endregion
         
         #region エラープロパティ
+        /// <summary>
+        /// エラープロパティ
+        /// </summary>
         public override string Error
         {
             get
@@ -51,9 +67,14 @@ namespace CSCScheduler
         }
         #endregion
 
-        // コマンドプロパティ
-        #region クリアコマンドプロパティ
+        #region クリア
+        /// <summary>
+        /// クリアコマンド
+        /// </summary>
         private Command _clearCommand;
+        /// <summary>
+        /// クリアコマンドプロパティ
+        /// </summary>
         public Command ClearCommand
         {
             get
@@ -65,6 +86,10 @@ namespace CSCScheduler
                 return _clearCommand;
             }
         }
+
+        /// <summary>
+        /// キーワードをクリアして全てのタイトルを表示する
+        /// </summary>
         private void ExecuteClearCommand()
         {
             Keyword = string.Empty;
@@ -72,8 +97,14 @@ namespace CSCScheduler
         }
         #endregion
 
-        #region 検索コマンドプロパティ
+        #region 検索
+        /// <summary>
+        /// 検索コマンド
+        /// </summary>
         private Command _searchCommand;
+        /// <summary>
+        /// 検索コマンドプロパティ
+        /// </summary>
         public Command SearchCommand
         {
             get
@@ -86,6 +117,9 @@ namespace CSCScheduler
             }
         }
 
+        /// <summary>
+        /// キーワードを含むスケジュールをリストい表示する
+        /// </summary>
         private void ExecuteSearchCommand()
         {
             FillItems(Keyword);
@@ -93,7 +127,13 @@ namespace CSCScheduler
         #endregion
 
         #region 新規コマンドプロパティ
+        /// <summary>
+        /// 新規コマンド
+        /// </summary>
         private Command _addNewCommand;
+        /// <summary>
+        /// 新規コマンドプロパティ
+        /// </summary>
         public Command AddNewCommand
         {
             get
@@ -106,6 +146,9 @@ namespace CSCScheduler
             }
         }
 
+        /// <summary>
+        /// 新規データを選択する
+        /// </summary>
         private void ExecuteAddNewCommand()
         {
             Item = Items[0];
@@ -113,7 +156,13 @@ namespace CSCScheduler
         #endregion
 
         #region 更新コマンドプロパティ
+        /// <summary>
+        /// 更新コマンド
+        /// </summary>
         private Command _updateCommand;
+        /// <summary>
+        /// 更新コマンドプロパティ
+        /// </summary>
         public Command UpdateCommand
         {
             get
@@ -127,6 +176,9 @@ namespace CSCScheduler
             }
         }
 
+        /// <summary>
+        /// 編集中のデータをデータベースに保存する
+        /// </summary>
         private void ExecuteUpdateCommand()
         {
             Action action =
@@ -137,11 +189,18 @@ namespace CSCScheduler
             return;
         }
 
+        /// <summary>
+        /// Updateコマンドが実行できる状態かを返す
+        /// </summary>
+        /// <returns>bool値</returns>
         private bool CanExecuteUpdateCommand()
         {
             return string.IsNullOrEmpty(Error);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void InsertRecord()
         {
             CSCSchedule schedule = new CSCSchedule();
@@ -152,12 +211,19 @@ namespace CSCScheduler
             Item = schedule;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void UpdateRecord()
         {
             GetDataPropertyValues(Item);
             _dataContext.SubmitChanges();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="schedule"></param>
         private void GetDataPropertyValues(CSCSchedule schedule)
         {
             schedule.Id = Id;
@@ -170,7 +236,13 @@ namespace CSCScheduler
         #endregion
 
         #region 削除コマンドプロパティ
+        /// <summary>
+        /// 削除コマンド
+        /// </summary>
         private Command _deleteCommand;
+        /// <summary>
+        /// 削除コマンドプロパティ
+        /// </summary>
         public Command DeleteCommand
         {
             get
@@ -184,6 +256,9 @@ namespace CSCScheduler
             }
         }
 
+        /// <summary>
+        /// 実行を確認後にデータを削除する
+        /// </summary>
         private void ExecuteDeleteCommand()
         {
             const string message = "削除して良いですか？";
@@ -198,6 +273,10 @@ namespace CSCScheduler
             Item = (i < Items.Count) ? Items[i] : Items[i - 1];
         }
 
+        /// <summary>
+        /// 新規でないかつ済みマークがオンであればtrueを返す
+        /// </summary>
+        /// <returns>bool値</returns>
         private bool CanExecuteDeleteCommand()
         {
             return (Id != 0) && (IsFinished);
@@ -205,7 +284,13 @@ namespace CSCScheduler
         #endregion
 
         #region 済み削除コマンドプロパティ
+        /// <summary>
+        /// 削除コマンド
+        /// </summary>
         private Command _autoDeleteCommand;
+        /// <summary>
+        /// 済み削除コマンドプロパティ
+        /// </summary>
         public Command AutoDeleteCommand
         {
             get
@@ -218,6 +303,9 @@ namespace CSCScheduler
             }
         }
 
+        /// <summary>
+        /// 実行確認した後、済みマークの付いたデータをまとめて削除する
+        /// </summary>
         private void ExecuteAutoDeleteCommand()
         {
             const string message = "済みマークの付いているタスクを削除して良いですか？";
@@ -229,7 +317,13 @@ namespace CSCScheduler
         #endregion
 
         #region インポートコマンドプロパティ
+        /// <summary>
+        /// 
+        /// </summary>
         private Command _importCommand;
+        /// <summary>
+        /// 
+        /// </summary>
         public Command ImportCommand
         {
             get
@@ -242,6 +336,9 @@ namespace CSCScheduler
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void ExecuteImportCommand()
         {
             string message = "インポートしたいファイルを選択して下さい";
@@ -262,6 +359,9 @@ namespace CSCScheduler
         #endregion
 
         #region エクスポートコマンドプロパティ
+        /// <summary>
+        /// 
+        /// </summary>
         private Command _executeExportCommand;
         public Command ExportCommand
         {
@@ -275,6 +375,9 @@ namespace CSCScheduler
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void ExecuteExportCommand()
         {
             string message = "エクスポートしたいファイルを選択して下さい";
@@ -296,6 +399,9 @@ namespace CSCScheduler
         // データプロパティ
 
         #region keyword プロパティ
+        /// <summary>
+        /// 
+        /// </summary>
         private string _keyword;
         public string Keyword
         {
@@ -312,6 +418,9 @@ namespace CSCScheduler
         #endregion
 
         #region Items プロパティ
+        /// <summary>
+        /// 
+        /// </summary>
         private ObservableCollection<CSCSchedule> _items = new ObservableCollection<CSCSchedule>();
         public ObservableCollection<CSCSchedule> Items
         {
@@ -323,6 +432,9 @@ namespace CSCScheduler
         #endregion
 
         #region Item プロパティ
+        /// <summary>
+        /// 
+        /// </summary>
         private CSCSchedule _item;
         public CSCSchedule Item
         {
@@ -347,6 +459,9 @@ namespace CSCScheduler
         #endregion
 
         #region Id プロパティ
+        /// <summary>
+        /// 
+        /// </summary>
         private int _id;
         public int Id
         {
@@ -363,6 +478,9 @@ namespace CSCScheduler
         #endregion
 
         #region Title プロパティ
+        /// <summary>
+        /// Titleプロパティ
+        /// </summary>
         private string _title;
         [Required(ErrorMessage = "タイトルを入力してください")]
         [StringLength(32, ErrorMessage = "32文字以内で入力してください")]
@@ -382,6 +500,9 @@ namespace CSCScheduler
         #endregion
 
         #region Contents プロパティ
+        /// <summary>
+        /// Contents プロパティ
+        /// </summary>
         private string _contents;
         [StringLength(32, ErrorMessage = "32文字以内で入力してください")]
         public string Contents
@@ -400,8 +521,10 @@ namespace CSCScheduler
         #endregion
 
         #region Limit プロパティ
+        /// <summary>
+        /// 
+        /// </summary>
         private DateTime _limit;
-
         public DateTime Limit
         {
             get
@@ -418,6 +541,9 @@ namespace CSCScheduler
         #endregion
 
         #region IsFinished プロパティ
+        /// <summary>
+        /// 
+        /// </summary>
         private bool _isFinished;
         public bool IsFinished
         {
@@ -434,6 +560,10 @@ namespace CSCScheduler
         #endregion
         
         #region FillItems メソッド
+        /// <summary>
+        /// 指定されたタイトルを含むデータをデータベースから読み込んでItemプロパティに格納する
+        /// </summary>
+        /// <param name="keyword">タイトル</param>
         private void FillItems(String keyword = null)
         {
             string k = (keyword ?? string.Empty).Trim();

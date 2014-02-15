@@ -31,10 +31,10 @@ namespace CSCScheduler
         }
 
         /// <summary>
-        /// 
+        /// 指定されたファイルからスケジュールデータを取得する
         /// </summary>
-        /// <param name="filename"></param>
-        /// <returns></returns>
+        /// <param name="filename">ファイル名</param>
+        /// <returns>スケジュールデータ</returns>
         static private IEnumerable<CSCSchedule> GetImportCSCSchedules(string filename)
         {
             List<CSCSchedule> list = new List<CSCSchedule>();
@@ -56,10 +56,10 @@ namespace CSCScheduler
         }
 
         /// <summary>
-        /// 
+        /// 指定された文字配列の値からCSCScheduleオブジェクトを作成する
         /// </summary>
-        /// <param name="fields"></param>
-        /// <returns></returns>
+        /// <param name="fields">文字列配列</param>
+        /// <returns>CSCScheduleオブジェクト</returns>
         static private CSCSchedule CreateCSCSchedule(string[] fields)
         {
             if (fields.Length != 4) throw new ImportDataException();
@@ -91,7 +91,7 @@ namespace CSCScheduler
         /// <summary>
         /// 引数として受け取ったファイルに対して、アプリケーションのデータを出力する
         /// </summary>
-        /// <param name="filename"></param>
+        /// <param name="filename">ファイル名</param>
         static public void Export(string filename)
         {
             Encoding encode = Encoding.GetEncoding("Shift_Jis");

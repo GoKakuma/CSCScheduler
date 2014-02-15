@@ -59,7 +59,7 @@ namespace CSCScheduler
         /// オブジェクトの状態（データ）を基に、そのコマンドが実行できるかを示す値を返すメソッド
         /// </summary>
         /// <param name="value">メソッド</param>
-        /// <returns></returns>
+        /// <returns>true or False nbb</returns>
         public bool CanExecute(object value) { return _canExecute(value); }
     }
 }
